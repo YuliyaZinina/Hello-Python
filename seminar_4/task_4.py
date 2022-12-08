@@ -15,7 +15,8 @@ def get_coefficients_list(k):
     return coefficients
 
 
-def get_polynomial(k, coefficients_list):
+def get_polynomial(coefficients_list):
+    k = len(coefficients_list)-1
     text = ''
 
     for j in range(0, len(coefficients_list)):
@@ -29,7 +30,7 @@ def get_polynomial(k, coefficients_list):
     return text
 
 
-k = 2
+k = 4
 # print(f'степень k = {k}')
 
 coefficients_list_1 = get_coefficients_list(k)
