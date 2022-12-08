@@ -36,7 +36,7 @@ k = 4
 coefficients_list_1 = get_coefficients_list(k)
 # print(f'coefficients_list_1 = {coefficients_list_1}')
 
-polynomial_1 = get_polynomial(k, coefficients_list_1)
+polynomial_1 = get_polynomial(coefficients_list_1)
 # print(polynomial_1)
 
 data = open('polynomial.txt', 'w')
@@ -44,14 +44,14 @@ data.write(polynomial_1)
 data.close()
 
 
-m = k
+m = 2
 # print(f'степень m = {m}')
 
 coefficients_list_2 = get_coefficients_list(m)
 # print(f'coefficients_list_2 = {coefficients_list_2}')
 
-polynomial_2 = get_polynomial(m, coefficients_list_2)
+polynomial_2 = get_polynomial(coefficients_list_2)
 # print(polynomial_2)
 
 with open('polynomial_2.txt', 'w') as data_2:
-    data_2.write(get_polynomial(m, coefficients_list_2))
+    data_2.write(get_polynomial(coefficients_list_2))
