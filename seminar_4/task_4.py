@@ -5,37 +5,58 @@
 
 import random
 
-k = 2
 
-
-def get_polynomial(k):
+def get_coefficients_list(k):
     coefficients = []
-    text = ''
 
     for i in range(0, k+1):
-        coefficients.append(random.choice(range(0, 101)))
+        coefficients.append(random.choice(range(1, 101)))
 
-    print(k)
-    print(coefficients)
+    return coefficients
 
-    for j in range(0, len(coefficients)):
+
+def get_polynomial(k, coefficients_list):
+    # coefficients = []
+    text = ''
+
+    # for i in range(0, k+1):
+    #     coefficients.append(random.choice(range(0, 101)))
+
+    # print(coefficients)
+
+    for j in range(0, len(coefficients_list)):
         if j == k:
-            text += f'{coefficients[j]} = 0'
+            text += f'{coefficients_list[j]} = 0'
         elif k - j == 1:
-            text += f'{coefficients[j]}x + '
+            text += f'{coefficients_list[j]}x + '
         else:
-            text += f'{coefficients[j]}x^{k - j} + '
+            text += f'{coefficients_list[j]}x^{k - j} + '
 
     return text
 
 
-polynomial = get_polynomial(k)
-print(polynomial)
+k = 2
+print(f'степень k = {k}')
+
+coefficients_list_1 = get_coefficients_list(k)
+print(f'coefficients_list_1 = {coefficients_list_1}')
+
+polynomial_1 = get_polynomial(k, coefficients_list_1)
+print(polynomial_1)
 
 data = open('polynomial.txt', 'w')
-data.write(polynomial)
+data.write(polynomial_1)
 data.close()
 
+
 m = k
+print(f'степень m = {m}')
+
+coefficients_list_2 = get_coefficients_list(m)
+print(f'coefficients_list_2 = {coefficients_list_2}')
+
+polynomial_2 = get_polynomial(m, coefficients_list_2)
+print(polynomial_2)
+
 with open('polynomial_2.txt', 'w') as data_2:
-    data_2.write(get_polynomial(m))
+    data_2.write(get_polynomial(m, coefficients_list_2))
