@@ -7,7 +7,7 @@ task = v.to_do()
 
 
 def result():
-    phonebook_list = ['Медведев', 'Иван', '098765', 'домашний', 'Чугов', 'Евгений', '987654', 'рабочий','Меринов', 'Стас', '876543', 'личный']
+    phonebook_list = [['Медведев', 'Иван', '098765', 'домашний'], ['Чугов', 'Евгений', '987654', 'рабочий'],['Меринов', 'Стас', '876543', 'личный']]
     if task == 1 or task == 2:
         file = 'phonebook.txt'
         if task == 1:
@@ -19,7 +19,7 @@ def result():
     elif task == 3 or task == 4:
         file = 'phonebook_csv.csv'
         if task == 3:
-            mc.csv_import(file, phonebook_list)
+            phonebook_list = mc.csv_import(file)
             return phonebook_list
         elif task == 4:
             mc.csv_export(file, phonebook_list)
